@@ -121,8 +121,6 @@ public class TodoListController {
         HashMap<String, AttributeValue> item_key =
                 new HashMap<String, AttributeValue>();
 
-        var todoUuid = UUID.randomUUID();
-
         item_key.put("id", new AttributeValue(todoId.toString()));
 
         HashMap<String, AttributeValueUpdate> updated_values =
@@ -138,7 +136,7 @@ public class TodoListController {
             System.err.println(e.getMessage());
             return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return new ResponseEntity<>(new Todo(todoUuid, todoItem), HttpStatus.OK);
+        return new ResponseEntity<>(new Todo(todoId, todoItem), HttpStatus.OK);
     }
 
     @DeleteMapping(value = "/todo")
