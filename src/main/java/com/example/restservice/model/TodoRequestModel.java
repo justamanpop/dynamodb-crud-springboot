@@ -1,5 +1,4 @@
-package com.example.restservice;
-import java.util.UUID;
+package com.example.restservice.model;
 
 public class TodoRequestModel {
     public String item;
